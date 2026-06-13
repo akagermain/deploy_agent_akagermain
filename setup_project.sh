@@ -44,4 +44,13 @@ fi
 # step 4: create directory structure
 
 
+echo ""
+echo " Creating Project directory Structure..."
+
+mkdir -p "${PROJECT_DIR}/Helpers"
+mkdir -p "${PROJECT_DIR}/reports"
+
+echo "Directories created"
+
+
 
