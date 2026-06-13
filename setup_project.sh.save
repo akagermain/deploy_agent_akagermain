@@ -22,26 +22,10 @@ cleanup() {
 
 trap cleanup SIGINT
 
-# step 2: welcome message
 
-echo "===================================================="
+echo "==================================================="
 echo " Student Attendance Tracker - Project Setup"
-echo "===================================================="
+echo "==================================================="
 echo ""
-
-
-# step3: ask for project name
-
-read -p "Enter project name (example: v1): " PROJECT_NAME
-
-if [ -z "$PROJECT_NAME" ]; then
-    echo "ERROR: Project name cannot be empty. Exiting"
-    echo "Please choose a different project name or delete the existing directory."
-    exit 1
-fi
-
-
-# step 4: create directory structure
-
 
 
