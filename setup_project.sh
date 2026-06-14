@@ -54,3 +54,28 @@ echo "Directories created"
 
 
 
+# step 5: copy source file
+
+echo "Copying source file..."
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+
+
+cp "${SCRIPT_DIR}/attendance_checker.py" "${PROJECT_DIR}/attendance_checker.py"
+
+cp "${SCRIPT_DIR}/assets.csv"    "${PROJECT_DIR}/Helpers/assets.csv"
+
+cp "${SCRIPT_DIR}/config.json"   "${PROJECT_DIR}/Helpers/config.json"
+
+cp "${SCRIPT_DIR}/reports.log"   "${PROJECT_DIR}/reports/reports.log"
+
+
+echo "All files placed successfully."
+
+
+
+
+
+
+
+
