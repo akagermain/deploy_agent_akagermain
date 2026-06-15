@@ -165,9 +165,24 @@ else
 fi
 
 
+# step 8: final message
+
+echo ""
+echo "=================================================="
+echo " Project setup complete!"
+echo " Location: ${PROJECT_DIR}/"
+echo ""
+echo " Structure: "
+echo " |-- attendance_checker.py"
+echo " |-- Helpers/"
+echo " |   |-- assets.csv"
+echo " |   |-- config.json"
+echo " |-- reports/"
+echo "     |-- reports.log"
+echo "=================================================="
 
 
-
+exit 0
 
 
 
