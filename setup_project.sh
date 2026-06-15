@@ -4,10 +4,9 @@ cleanup() {
     echo ""
     echo "WARNING: script interrupted! Starting emergency cleanup..."
 
-    if [ - d "attendance_tracker_${PROJECT_NAME}" ]; then
+    if [ -d "attendance_tracker_${PROJECT_NAME}" ]; then
 	echo "Building incomplete directory into archive..."
-	tar -czf "attendance_tracker_${PROJECT_NAME}_archive.tar.gz"
-	"attendance_tracker_${PROJECT_NAME}"
+	tar -czf "attendance_tracker_${PROJECT_NAME}_archive.tar.gz" "attendance_tracker_${PROJECT_NAME}"
 
 	rm -rf "attendance_tracker_${PROJECT_NAME}"
 	echo "Incomplete directory deleted. Workspace is clean."
@@ -34,8 +33,16 @@ echo ""
 
 read -p "Enter project name (example: v1): " PROJECT_NAME
 
+
 if [ -z "$PROJECT_NAME" ]; then
     echo "ERROR: Project name cannot be empty. Exiting"
+    exit 1
+fi
+
+PROJECT_DIR="attendance_tracker_${PROJECT_NAME}"
+
+if [ -d "$PROJECT_DIR" ]; then
+    echo "ERROR: Directory '${PROJECT_DIR}' already exists."
     echo "Please choose a different project name or delete the existing directory."
     exit 1
 fi
@@ -88,7 +95,7 @@ if [[ "$UPDATE_CONFIG" == "yes" || "$UPDATE_CONFIG" == "y" ]]; then
 
    if [ -n "$WARNING_VAL" ]; then
 
-      if ! [[ "$WARNING_VAL" =~ ^[0-9]+$ ]] || [ "$WARNING_VAL" -lt 0 ] || [ "WARNING_VAL" -gt 100 ]; then
+      if ! [[ "$WARNING_VAL" =~ ^[0-9]+$ ]] || [ "$WARNING_VAL" -lt 0 ] || [ "$WARNING_VAL" -gt 100 ]; then
           echo "ERROR: Warning threshold must be a whole number between 0 and 100."
           exit 1
       fi
@@ -183,45 +190,5 @@ echo "=================================================="
 
 
 exit 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
