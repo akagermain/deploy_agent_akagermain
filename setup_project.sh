@@ -124,6 +124,46 @@ fi
 
 # Step 7: Environment validation and health check
 
+echo ""
+echo "Running Health Check..."
+
+if command -v python3 &> /dev/null; then
+    PYTHON_VERSION=$(python3 --version)
+    echo "SUCCESS: Python3 is installed - ${PYTHON_VERSION}"
+else
+    echo "WARNING: Python3 is NOT installed on this system."
+    echo "The attendance tracker requires python3. Please Install it before running the project."
+fi
+
+
+echo ""
+echo "Verifying the directory structure..."
+
+ALL_GOOD=true
+
+if [ ! -f "${PROJECT_DIR}/attendance_checker.py" ]; then
+    echo "MISSING: ${PROJECT_DIR}/attendance_checker.py"
+    ALL_GOOD=false
+fi
+if [ ! -f "${PROJECT_DIR}/Helpers/assets.csv" ]; then
+    echo "MISSING: ${PROJECT_DIR}/Helpers/assets.csv"
+    ALL_GOOD=false
+fi
+if [ ! -f "${PROJECT_DIR}/Helpers/config.json" ]; then
+    echo "MISSING: ${PROJECT_DIR}/Helpers/config.json"
+    ALL_GOOD=false
+fi
+if [ ! -f "${PROJECT_DIR}/reports/reports.log" ]; then
+    echo "MISSING: ${PROJECT_DIR}/reports/reports.log"
+    ALL_GOOD=false
+fi
+
+if [ "$ALL_GOOD" = true ]; then
+    echo "All files verified successfully."
+else
+    echo "WARNING: Some files are missing. Please check the errors above."
+fi
+
 
 
 
