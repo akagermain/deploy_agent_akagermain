@@ -177,6 +177,7 @@ fi
 echo ""
 echo "=================================================="
 echo " Project setup complete!"
+echo ""
 echo " Location: ${PROJECT_DIR}/"
 echo ""
 echo " Structure: "
@@ -186,6 +187,7 @@ echo " |   |-- assets.csv"
 echo " |   |-- config.json"
 echo " |-- reports/"
 echo "     |-- reports.log"
+echo ""
 echo "=================================================="
 
 
