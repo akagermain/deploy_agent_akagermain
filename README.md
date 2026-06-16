@@ -36,3 +36,7 @@ Then the script will:
 1. Catch the interrupt signal (SIGINT)
 2. Bundle the incomplete project folder into a .tar.gz.archive
 3. Delete the incomplete folder to keep your workspace clean 
+
+## Youtube video link
+
+https://youtu.be/-wUoW0jkYk8
